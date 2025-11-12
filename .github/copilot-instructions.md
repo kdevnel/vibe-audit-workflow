@@ -1,40 +1,82 @@
-# Code Audit Workspace Instructions
+# Vibe Code Audit Framework - AI Agent Instructions
 
-This workspace contains code that is currently **under security and quality audit**. The audit framework is designed to systematically review applications built by non-developers.
+## Framework Context
 
-## Workspace Context
+This repository contains a **security audit framework** designed to be copied into target projects. There are two modes of operation:
 
-You are assisting with a **code audit process** for an application. Your role is to help identify security vulnerabilities, code quality issues, architectural problems, and business logic flaws.
+### Mode 1: Working in THIS Framework Repository
+When working in `vibe-audit-workflow/` itself, you're maintaining the framework:
+- Edit agent definitions in `.github/copilot-agents/`
+- Update audit prompts in `prompts/` and `prompts/deep-dive/`
+- Improve report templates in `templates/`
+- Maintain documentation in `README.md` and `SETUP.md`
 
-## Audit Workflow (4 Phases)
+### Mode 2: Working in a Target Project (Framework Deployed)
+When these files are copied to a target project, you're conducting an audit:
+- Use `@security-auditor`, `@code-reviewer`, `@report-generator` agents
+- Follow the 4-phase audit workflow
+- Analyze target application code for vulnerabilities
+- Generate findings in priority order
 
-### Phase 1: Initial Setup & Scan (30 minutes)
-- Automatically scan for hardcoded secrets and credentials
-- Identify authentication vulnerabilities
-- Find unprotected API endpoints
-- Check database security configurations
+**Current mode**: Check if `prompts/` and agents exist. If yes, audit mode is active.
 
-### Phase 2: Deep Dive Analysis (2-4 hours)
-- Comprehensive authentication system review
-- Detailed API security assessment
-- In-depth database security analysis
-- Technology-specific vulnerability patterns
+## Architecture Overview
 
-### Phase 3: Business Logic Testing (1-2 hours)
-- Evaluate workflow integrity and edge cases
-- Test permission boundaries and access controls
-- Identify race conditions and data consistency issues
-- Validate business rule enforcement
+This is a **meta-framework** with three layers:
 
-### Phase 4: Documentation & Reporting (1 hour)
-- Consolidate findings by priority level
-- Generate structured audit reports
-- Provide specific code examples and fixes
-- Create implementation timelines
+1. **Agent Layer** (`.github/copilot-agents/*.md`) - Specialized Copilot agents with security expertise
+2. **Prompt Library** (`prompts/`) - Structured audit workflows as copyable prompts
+3. **Templates** (`templates/`) - Standardized audit report formats
 
-## Priority Levels
+**Key Design Decision**: Hybrid approach supporting both agent-driven (automated) and prompt-driven (manual) workflows. This gives auditors flexibility based on complexity and control needs.
 
-When categorizing findings, use these priority levels:
+## Critical Developer Workflows
+
+### When Maintaining This Framework
+
+**Adding a new agent:**
+```bash
+# Create in .github/copilot-agents/new-agent.md
+# Follow the structure from existing agents:
+# - Role definition, approach, search patterns, output format
+```
+
+**Updating audit prompts:**
+- Phase prompts: `prompts/phase[1-4]-*.md` - High-level workflows
+- Deep-dive prompts: `prompts/deep-dive/*.md` - Specialized analysis
+- Keep prompts technology-agnostic but provide specific patterns
+
+**Testing agent behavior:**
+1. Copy framework to a test project
+2. Trigger agents with `@agent-name`
+3. Verify output follows priority levels (CRITICAL/HIGH/MEDIUM/LOW)
+
+### When Conducting Audits (Framework Deployed)
+
+**Quick Start Pattern:**
+```
+1. @security-auditor          # Broad automated scan
+2. Review findings            # Identify problem areas
+3. Use deep-dive prompts      # Targeted manual analysis
+4. @report-generator          # Compile comprehensive report
+```
+
+**File Organization Pattern:**
+```
+target-project/
+├── .github/copilot-agents/   # Agent definitions (copied)
+├── prompts/                  # Audit workflows (copied)
+├── templates/                # Report formats (copied)
+└── audit-reports/           # Generated findings (create this)
+    ├── 2025-11-12-initial-scan.md
+    └── 2025-11-12-final-report.md
+```
+
+## Project-Specific Conventions
+
+### Audit Finding Priority System
+
+All vulnerability findings MUST be categorized using these exact priority levels:
 
 - **🚨 CRITICAL** - Fix immediately (within 24 hours)
   - Authentication bypass vulnerabilities
@@ -59,6 +101,26 @@ When categorizing findings, use these priority levels:
   - Code organization refactoring
   - Non-security configuration
   - Testing coverage gaps
+
+### Agent Search Pattern Convention
+
+Agents ALWAYS use `@workspace` searches instead of suggesting manual grep/find commands. Example:
+```
+Search for: login, authenticate, session, jwt, token
+NOT: "Run grep -r 'password' ."
+```
+
+### Vulnerability Report Format (Required)
+
+Every finding must include:
+1. **Exact location**: File path and line numbers
+2. **Vulnerable code**: Actual code snippet from source
+3. **Risk explanation**: What could go wrong
+4. **Attack scenario**: Step-by-step exploit path
+5. **Fix**: Corrected code example
+6. **Testing**: Verification steps
+
+See `templates/audit-report-template.md` for complete structure.
 
 ## Behavior Guidelines
 
