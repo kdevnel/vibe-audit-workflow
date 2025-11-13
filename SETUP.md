@@ -13,9 +13,9 @@ Copy the audit framework files into the root of your target project:
 cd /path/to/your-project
 
 # Copy framework files (adjust path to where you cloned vibe-audit-workflow)
-cp -r /path/to/vibe-audit-workflow/.github/ .
-cp -r /path/to/vibe-audit-workflow/prompts/ .
-cp -r /path/to/vibe-audit-workflow/templates/ .
+cp -r /path/to/vibe-audit-workflow/.github .
+cp -r /path/to/vibe-audit-workflow/prompts .
+cp -r /path/to/vibe-audit-workflow/templates .
 ```
 
 Your project structure should now include:
