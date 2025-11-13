@@ -1,0 +1,33 @@
+{
+  "branding": {
+    "logo": null,
+    "company": "Your Security Firm",
+    "colors": {
+      "primary": "#1a365d",
+      "secondary": "#2d3748",
+      "accent": "#3182ce",
+      "danger": "#e53e3e",
+      "warning": "#dd6b20",
+      "success": "#38a169"
+    },
+    "fonts": {
+      "heading": "Inter, -apple-system, BlinkMacSystemFont, sans-serif",
+      "body": "Inter, -apple-system, BlinkMacSystemFont, sans-serif",
+      "code": "JetBrains Mono, Consolas, Monaco, monospace"
+    }
+  },
+  "layout": {
+    "pageSize": "A4",
+    "margins": {
+      "top": "2cm",
+      "right": "2cm",
+      "bottom": "2cm",
+      "left": "2cm"
+    }
+  },
+  "cover": {
+    "enabled": true,
+    "title": "Security Audit Report",
+    "subtitle": "Application Security Assessment"
+  }
+}

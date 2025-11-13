@@ -103,6 +103,7 @@ EOF
    - `@security-auditor`
    - `@code-reviewer`
    - `@report-generator`
+   - `@pdf-report-generator`
 
 If agents don't appear, try:
 
@@ -166,8 +167,11 @@ If agents don't appear, try:
 
 4. /phase3-business-logic for workflow testing
 
-5. @report-generator
+4. @report-generator
    → Final comprehensive report
+
+5. @pdf-report-generator (optional)
+   → Convert report to branded PDF
 ```
 
 ## Example Workflow
@@ -226,6 +230,15 @@ If database issues found:
 3. Review report structure
 4. Request clarifications if needed
 5. Save report to /audit-reports/ directory
+```
+
+### Optional: PDF Generation
+
+```text
+1. Type: @pdf-report-generator
+2. Provide path to markdown report
+3. Optionally configure branding
+4. Generate professional PDF deliverable
 ```
 
 ### Hour 4-5: Fixes (ongoing)
@@ -308,6 +321,7 @@ audit-reports/
 ├── 2025-11-12-authentication-analysis.md
 ├── 2025-11-12-api-security.md
 ├── 2025-11-12-final-report.md
+├── 2025-11-12-final-report.pdf    # PDF version
 └── 2025-11-12-fix-verification.md
 ```
 
@@ -320,13 +334,95 @@ As you work through the audit:
 3. Use dates for easy tracking
 4. Keep final report separate
 
+## PDF Report Generation (Optional)
+
+The framework includes an optional PDF generation tool for creating professionally branded audit reports.
+
+### Installation (PDF generator)
+
+```bash
+# Copy PDF generator to your project
+cp -r /path/to/vibe-audit-workflow/tools/audit-pdf-generator ./tools/
+
+# Install dependencies
+cd tools/audit-pdf-generator
+npm install
+```
+
+### Basic Usage
+
+```bash
+# Generate PDF from markdown report
+node tools/audit-pdf-generator/bin/generate-pdf.js \
+  audit-reports/2025-11-13-final-report.md \
+  -o audit-reports/2025-11-13-final-report.pdf
+```
+
+### Custom Branding
+
+Create `audit-pdf-config.json` in your project root:
+
+```json
+{
+  "branding": {
+    "logo": "./assets/company-logo.png",
+    "company": "Your Security Firm",
+    "colors": {
+      "primary": "#1a365d",
+      "danger": "#e53e3e",
+      "warning": "#dd6b20"
+    }
+  },
+  "cover": {
+    "enabled": true,
+    "title": "Security Audit Report",
+    "subtitle": "Client Name - November 2025"
+  }
+}
+```
+
+Then generate with branding:
+
+```bash
+node tools/audit-pdf-generator/bin/generate-pdf.js \
+  audit-reports/final-report.md \
+  -o deliverables/ClientAudit-Nov2025.pdf \
+  -c audit-pdf-config.json
+```
+
+### Using the PDF Agent
+
+For guided PDF generation:
+
+1. Open Copilot Chat
+2. Type: `@pdf-report-generator`
+3. Follow the prompts to generate your PDF
+
+The agent will:
+
+- Help locate your markdown report
+- Check if the PDF tool is installed
+- Guide you through branding configuration
+- Provide the exact command to generate your PDF
+
+### PDF Generation Tips
+
+- **Logo format**: PNG, JPG, or SVG (max 200px wide recommended)
+- **Report optimization**: Use horizontal rules (`---`) for page breaks
+- **Code blocks**: Specify language for syntax highlighting
+- **Tables**: Keep tables reasonably sized for page width
+- **File size**: Compress images before including in reports
+
+See `tools/audit-pdf-generator/README.md` for detailed documentation.
+
 ## Next Steps
 
 1. Verify installation is complete
 2. Review the [README.md](../README.md) for framework overview
 3. Start your first audit with `@security-auditor`
 4. Review the phase prompts in `.github/prompts/` directory
-5. Generate your first report with `Report-Generator`
+5. Generate your first report with `@report-generator`
+6. (Optional) Set up PDF generation for client deliverables
 
 ## Support
 

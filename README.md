@@ -73,9 +73,17 @@ Use `@report-generator` to create:
 - Code examples and fixes
 - Implementation timeline
 
+### Optional: PDF Generation
+
+Use `@pdf-report-generator` to convert reports to professionally branded PDFs:
+
+- Custom company branding and logo
+- Print-optimized formatting
+- Professional client deliverables
+
 ## 🎨 Key Features
 
-- **Copilot Agents**: Three specialized agents for security, code quality, and reporting
+- **Copilot Agents**: Four specialized agents for security, code quality, reporting, and PDF generation
 - **Hybrid Prompts**: Comprehensive phase prompts plus targeted sub-prompts
 - **Technology Agnostic**: Works with React, Node.js, Python, and more
 - **Conversational**: Agents ask clarifying questions only when needed
@@ -86,6 +94,7 @@ Use `@report-generator` to create:
 - **[SETUP.md](SETUP.md)** - Detailed installation and configuration guide
 - **[prompts/](prompts/)** - Ready-to-use audit prompts organized by phase
 - **[templates/](templates/)** - Audit report templates
+- **[tools/audit-pdf-generator/](tools/audit-pdf-generator/)** - Optional PDF generation tool
 - **[archive/](archive/)** - Original framework documentation for reference
 
 ## 🔧 Usage Pattern
@@ -102,6 +111,7 @@ Use `@report-generator` to create:
 1. @security-auditor → finds hardcoded API key in auth.js
 2. /Deep-Dive_Auth-Review.md → comprehensive auth analysis
 3. @report-generator → compile all findings into audit report
+4. @pdf-report-generator → create branded PDF for client delivery
 ```
 
 ## 🎯 Priority Levels

@@ -5,6 +5,10 @@
 **Project Version**: [Version/Commit Hash]
 **Overall Risk Level**: 🚨 [CRITICAL / HIGH / MEDIUM / LOW]
 
+<!-- PDF Styling Hints: This template is optimized for both markdown and PDF output.
+     Priority indicators (🚨⚠️📝💡) are automatically styled in PDF generation.
+     Use horizontal rules (---) to suggest page breaks in PDF output. -->
+
 ---
 
 ## Executive Summary
@@ -62,7 +66,9 @@ This audit covered:
 
 ## 🚨 Critical Vulnerabilities (Fix Immediately - Within 24 Hours)
 
-### 1. [Vulnerability Name]
+<!-- PDF Note: Critical vulnerabilities will be styled with red border and background -->
+
+### 1. [Vulnerability Name] (CRITICAL)
 
 **Category**: [Authentication / Database / API / Input Validation / Business Logic]
 
@@ -118,7 +124,9 @@ This audit covered:
 
 ## ⚠️ High Priority Issues (Fix Within 1 Week)
 
-### 3. [Vulnerability Name]
+<!-- PDF Note: High priority issues will be styled with orange border and background -->
+
+### 3. [Vulnerability Name] (HIGH)
 
 [Same structure as Critical section]
 
@@ -126,7 +134,9 @@ This audit covered:
 
 ## 📝 Medium Priority Issues (Fix Within 1 Month)
 
-### [Number]. [Vulnerability Name]
+<!-- PDF Note: Medium priority issues will be styled with blue border and background -->
+
+### [Number]. [Vulnerability Name] (MEDIUM)
 
 [Same structure, less detail acceptable for Medium priority]
 
@@ -134,13 +144,17 @@ This audit covered:
 
 ## 💡 Low Priority Issues (Fix When Convenient)
 
-### [Number]. [Issue Name]
+<!-- PDF Note: Low priority issues will be styled with green border and background -->
+
+### [Number]. [Issue Name] (LOW)
 
 [Brief description, can be more concise for Low priority]
 
 ---
 
 ## Risk Assessment Matrix
+
+<!-- PDF Note: Tables are automatically styled for print. Large tables may span multiple pages. -->
 
 | # | Vulnerability | Category | Location | Likelihood | Impact | Risk Level | Priority | Est. Time |
 |---|---------------|----------|----------|------------|--------|------------|----------|-----------|

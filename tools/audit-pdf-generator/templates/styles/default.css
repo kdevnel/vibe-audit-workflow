@@ -1,0 +1,266 @@
+/* Default Styles for Audit Reports */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 11pt;
+  line-height: 1.6;
+  color: #2d3748;
+  background: white;
+}
+
+.document {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.document-content {
+  padding: 1rem 0;
+}
+
+/* Typography */
+h1 {
+  font-size: 24pt;
+  font-weight: 700;
+  margin: 1.5rem 0 1rem 0;
+  line-height: 1.2;
+  page-break-after: avoid;
+}
+
+h2 {
+  font-size: 18pt;
+  font-weight: 700;
+  margin: 1.5rem 0 0.75rem 0;
+  line-height: 1.3;
+  page-break-after: avoid;
+}
+
+h3 {
+  font-size: 14pt;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem 0;
+  line-height: 1.3;
+  page-break-after: avoid;
+}
+
+h4 {
+  font-size: 12pt;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem 0;
+  page-break-after: avoid;
+}
+
+h5, h6 {
+  font-size: 11pt;
+  font-weight: 600;
+  margin: 0.75rem 0 0.5rem 0;
+  page-break-after: avoid;
+}
+
+p {
+  margin: 0.75rem 0;
+}
+
+/* Lists */
+ul, ol {
+  margin: 0.75rem 0;
+  padding-left: 2rem;
+}
+
+li {
+  margin: 0.25rem 0;
+}
+
+/* Code blocks */
+pre {
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+  font-size: 9pt;
+  line-height: 1.5;
+  page-break-inside: avoid;
+}
+
+code {
+  font-size: 9pt;
+  background: #f7fafc;
+  padding: 0.125rem 0.25rem;
+  border-radius: 2px;
+  border: 1px solid #e2e8f0;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+/* Tables */
+.table-container {
+  margin: 1rem 0;
+  overflow-x: auto;
+  page-break-inside: avoid;
+}
+
+.audit-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10pt;
+}
+
+.audit-table thead {
+  background: #edf2f7;
+}
+
+.audit-table th {
+  padding: 0.5rem;
+  text-align: left;
+  font-weight: 600;
+  border: 1px solid #cbd5e0;
+}
+
+.audit-table td {
+  padding: 0.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.audit-table tr:nth-child(even) {
+  background: #f7fafc;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid #cbd5e0;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: #4a5568;
+  font-style: italic;
+}
+
+/* Links */
+a {
+  color: #3182ce;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Horizontal rules */
+hr {
+  border: none;
+  border-top: 2px solid #e2e8f0;
+  margin: 2rem 0;
+}
+
+/* Priority indicators */
+.priority-icon {
+  font-size: 14pt;
+  margin-right: 0.25rem;
+  vertical-align: middle;
+}
+
+/* Vulnerability sections */
+.vulnerability-critical,
+.vulnerability-high,
+.vulnerability-medium,
+.vulnerability-low {
+  border-radius: 4px;
+  page-break-inside: avoid;
+}
+
+/* Cover page */
+.cover-page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.cover-content {
+  max-width: 80%;
+}
+
+.cover-title {
+  font-size: 48pt;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.cover-subtitle {
+  font-size: 24pt;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}
+
+.cover-company {
+  font-size: 18pt;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.cover-date {
+  font-size: 14pt;
+  opacity: 0.8;
+}
+
+/* Page breaks */
+.page-break {
+  page-break-before: always;
+}
+
+/* Syntax highlighting (highlight.js default colors) */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: #f7fafc;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-section,
+.hljs-link {
+  color: #d73a49;
+}
+
+.hljs-string,
+.hljs-attribute {
+  color: #032f62;
+}
+
+.hljs-number,
+.hljs-regexp,
+.hljs-addition {
+  color: #22863a;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #6a737d;
+  font-style: italic;
+}
+
+.hljs-function,
+.hljs-class,
+.hljs-title {
+  color: #6f42c1;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag {
+  color: #005cc5;
+}

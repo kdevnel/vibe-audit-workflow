@@ -1,0 +1,61 @@
+/* Print-specific styles */
+
+@media print {
+  body {
+    background: white;
+  }
+
+  /* Page breaks */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+
+  pre, blockquote, table {
+    page-break-inside: avoid;
+  }
+
+  .vulnerability-critical,
+  .vulnerability-high,
+  .vulnerability-medium,
+  .vulnerability-low {
+    page-break-inside: avoid;
+  }
+
+  /* Ensure tables don't break awkwardly */
+  .audit-table {
+    page-break-inside: auto;
+  }
+
+  .audit-table tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+
+  .audit-table thead {
+    display: table-header-group;
+  }
+
+  .audit-table tfoot {
+    display: table-footer-group;
+  }
+
+  /* Avoid page breaks after headings */
+  h1::after, h2::after, h3::after {
+    content: "";
+    display: block;
+    height: 0.1px;
+    margin-bottom: -0.1px;
+  }
+
+  /* Links */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #666;
+  }
+
+  /* Hide elements not needed in print */
+  .no-print {
+    display: none;
+  }
+}
