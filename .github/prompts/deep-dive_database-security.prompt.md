@@ -1,3 +1,8 @@
+---
+agent: Code_Reviewer
+name: "Deep-Dive_Database-Security"
+description: "Use this prompt when initial scans identify database security vulnerabilities requiring detailed investigation."
+---
 # Database Security Deep Dive
 
 Use this prompt when initial scans identify database security vulnerabilities requiring detailed investigation.

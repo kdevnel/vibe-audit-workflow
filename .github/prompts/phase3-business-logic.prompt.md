@@ -1,3 +1,8 @@
+---
+agent: Code_Reviewer
+name: "Phase3-Business_Logic_Testing"
+description: "Evaluate business logic, workflows, and edge case handling."
+---
 # Phase 3: Business Logic Testing
 
 Copy and paste this prompt into Copilot Chat to evaluate business logic, workflows, and edge case handling.

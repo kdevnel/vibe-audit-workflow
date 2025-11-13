@@ -1,3 +1,8 @@
+---
+agent: Security_Auditor
+name: "Phase1-Initial_Security_Scan"
+description: "Perform a comprehensive initial security scan of this codebase."
+---
 # Phase 1: Initial Security Scan
 
 Copy and paste this prompt into Copilot Chat to begin your security audit.

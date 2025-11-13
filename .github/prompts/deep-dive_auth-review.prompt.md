@@ -1,3 +1,8 @@
+---
+agent: Code_Reviewer
+name: "Deep-Dive_Auth-Review"
+description: "Use this prompt when initial scans identify authentication-related vulnerabilities requiring detailed investigation."
+---
 # Authentication System Deep Dive
 
 Use this prompt when initial scans identify authentication-related vulnerabilities requiring detailed investigation.

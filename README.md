@@ -24,8 +24,6 @@ This framework transforms code auditing from a manual, ad-hoc process into a gui
 
    ```bash
    cp -r .github /path/to/target-project/
-   cp -r prompts /path/to/target-project/
-   cp -r templates /path/to/target-project/
    ```
 
 2. **Open the target project in VS Code**
@@ -102,7 +100,7 @@ Use `@report-generator` to create:
 
 ```text
 1. @security-auditor → finds hardcoded API key in auth.js
-2. Copy/paste prompts/deep-dive/auth-review.md → comprehensive auth analysis
+2. /Deep-Dive_Auth-Review.md → comprehensive auth analysis
 3. @report-generator → compile all findings into audit report
 ```
 

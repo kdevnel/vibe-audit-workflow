@@ -14,8 +14,6 @@ cd /path/to/your-project
 
 # Copy framework files (adjust path to where you cloned vibe-audit-workflow)
 cp -r /path/to/vibe-audit-workflow/.github .
-cp -r /path/to/vibe-audit-workflow/prompts .
-cp -r /path/to/vibe-audit-workflow/templates .
 ```
 
 Your project structure should now include:
@@ -24,21 +22,20 @@ Your project structure should now include:
 your-project/
 ├── .github/
 │   ├── copilot-instructions.md
-│   └── copilot-agents/
-│       ├── security-auditor.md
-│       ├── code-reviewer.md
-│       └── report-generator.md
-├── prompts/
-│   ├── phase1-initial-scan.md
-│   ├── phase2-deep-dive.md
-│   ├── phase3-business-logic.md
-│   ├── phase4-reporting.md
-│   └── deep-dive/
-│       ├── auth-review.md
-│       ├── api-security.md
-│       └── database-security.md
-├── templates/
-│   └── audit-report-template.md
+│   ├── agents/
+│   │   ├── security-auditor.agent.md
+│   │   ├── code-reviewer.agent.md
+│   │   └── report-generator.agent.md
+│   ├── prompts/
+│   │   ├── phase1-initial-scan.prompt.md
+│   │   ├── phase2-deep-dive.prompt.md
+│   │   ├── phase3-business-logic.prompt.md
+│   │   ├── phase4-reporting.prompt.md
+│   │   ├── deep-dive_auth-review.prompt.md
+│   │   ├── deep-dive_api-security.prompt.md
+│   │   └── deep-dive_database-security.prompt.md
+│   └── templates/
+│       └── audit-report-template.md
 └── [your project files...]
 ```
 
@@ -49,9 +46,9 @@ If you don't want audit framework files in your project's git history:
 ```bash
 # Add these lines to your .gitignore
 echo "/.github/copilot-instructions.md" >> .gitignore
-echo "/.github/copilot-agents/" >> .gitignore
-echo "/prompts/" >> .gitignore
-echo "/templates/audit-report-template.md" >> .gitignore
+echo "/.github/agents/" >> .gitignore
+echo ".github/prompts/" >> .gitignore
+echo ".github/templates/audit-report-template.md" >> .gitignore
 echo "/audit-reports/" >> .gitignore
 ```
 
@@ -111,7 +108,7 @@ If agents don't appear, try:
 
 - Reload VS Code window (Cmd+Shift+P → "Reload Window")
 - Restart VS Code completely
-- Verify `.github/copilot-agents/` folder exists with all agent files
+- Verify `.github/agents/` folder exists with all agent files
 
 ## Usage Patterns
 
@@ -143,16 +140,16 @@ If agents don't appear, try:
 ### Pattern 2: Prompt-Based Workflow
 
 ```text
-1. Copy/paste prompts/phase1-initial-scan.md
+1. /phase1-initial-scan
    → Manual control over initial scan
 
-2. Copy/paste prompts/phase2-deep-dive.md
+2. /phase2-deep-dive
    → Comprehensive analysis of key areas
 
-3. Copy/paste prompts/phase3-business-logic.md
+3. /phase3-business-logic
    → Test workflows and edge cases
 
-4. Copy/paste prompts/phase4-reporting.md
+4. /prompts/phase4-reporting
    → Generate final report
 ```
 
@@ -165,9 +162,9 @@ If agents don't appear, try:
 2. @code-reviewer
    → Code quality assessment
 
-3. Copy/paste specific deep-dive prompts for critical areas
+3. Run specific deep-dive prompts for critical areas
 
-4. Copy/paste phase3-business-logic.md for workflow testing
+4. /phase3-business-logic for workflow testing
 
 5. @report-generator
    → Final comprehensive report
@@ -194,19 +191,19 @@ Based on findings, use deep-dive prompts:
 
 ```text
 If authentication issues found:
-1. Open prompts/deep-dive/auth-review.md
+1. Open .github/prompts/deep-dive_auth-review.md
 2. Copy entire content
 3. Paste into Copilot Chat
 4. Review detailed authentication analysis
 
 If API vulnerabilities found:
-1. Open prompts/deep-dive/api-security.md
+1. Open .github/prompts/deep-dive_api-security.md
 2. Copy entire content
 3. Paste into Copilot Chat
 4. Review detailed API security analysis
 
 If database issues found:
-1. Open prompts/deep-dive/database-security.md
+1. Open .github/prompts/deep-dive_database-security.md
 2. Copy entire content
 3. Paste into Copilot Chat
 4. Review detailed database security analysis
@@ -215,7 +212,7 @@ If database issues found:
 ### Hour 3-4: Business Logic (1 hour)
 
 ```text
-1. Open prompts/phase3-business-logic.md
+1. Open .github/prompts/phase3-business-logic.md
 2. Copy entire content
 3. Paste into Copilot Chat
 4. Review workflow integrity findings
@@ -277,8 +274,8 @@ If database issues found:
 
 **Agents not appearing:**
 
-- Verify `.github/copilot-agents/` folder exists
-- Check agent files have `.md` extension
+- Verify `.github/agents/` folder exists
+- Check agent files have `.agent.md` extension
 - Reload VS Code window
 - Restart VS Code
 
@@ -328,15 +325,15 @@ As you work through the audit:
 1. Verify installation is complete
 2. Review the [README.md](../README.md) for framework overview
 3. Start your first audit with `@security-auditor`
-4. Review the phase prompts in `prompts/` directory
-5. Generate your first report with `@report-generator`
+4. Review the phase prompts in `.github/prompts/` directory
+5. Generate your first report with `Report-Generator`
 
 ## Support
 
 If you encounter issues:
 
 1. Check this SETUP guide
-2. Review agent files in `.github/copilot-agents/`
+2. Review agent files in `.github/agents/`
 3. Verify Copilot subscription is active
 4. Check VS Code output panel for errors
 
@@ -344,11 +341,11 @@ If you encounter issues:
 
 Feel free to customize:
 
-- **Agents**: Edit `.github/copilot-agents/*.md` for your specific needs
-- **Prompts**: Modify `prompts/*.md` for your tech stack
+- **Agents**: Edit `.github/agents/*.agent.md` for your specific needs
+- **Prompts**: Modify `.github/prompts/*.prompt.md` for your tech stack
 - **Instructions**: Update `.github/copilot-instructions.md` for your workflow
-- **Templates**: Adjust `templates/audit-report-template.md` for your format
+- **Templates**: Adjust `.github/templates/audit-report-template.md` for your format
 
 ---
 
-**Ready to start?** Run `@security-auditor` in Copilot Chat to begin your first audit!
+**Ready to start?** Run `Security-Auditor` in Copilot Chat with the promp `Run security audit` to begin your first audit!

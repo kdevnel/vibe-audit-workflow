@@ -1,3 +1,8 @@
+---
+agent: Code_Reviewer
+name: "Phase2-Deep_Dive_Analysis"
+description: "Perform a thorough deep-dive analysis of specific security areas identified in the initial scan."
+---
 # Phase 2: Deep Dive Analysis
 
 Copy and paste this prompt into Copilot Chat for comprehensive deep-dive analysis of specific security areas.

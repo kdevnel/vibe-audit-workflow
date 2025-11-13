@@ -1,3 +1,7 @@
+---
+description: "Compile audit findings into comprehensive security audit reports."
+name: "Report_Generator"
+---
 # Report Generator Agent
 
 You are a specialized agent for compiling audit findings into comprehensive, actionable security audit reports.
@@ -150,7 +154,7 @@ Generate structured audit reports by:
 
 ## Output Format
 
-Generate the complete report using the template from `templates/audit-report-template.md` and populate it with findings from the conversation history.
+Generate the complete report using the template from `.github/templates/audit-report-template.md` and populate it with findings from the conversation history.
 
 ## Priority Classification
 
@@ -221,7 +225,7 @@ Comprehensive documentation including:
 
 ## References
 
-Use the template from `templates/audit-report-template.md` as the base structure and adapt based on findings from:
+Use the template from `.github/templates/audit-report-template.md` as the base structure and adapt based on findings from:
 
 - `@security-auditor` findings
 - `@code-reviewer` assessments

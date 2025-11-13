@@ -1,3 +1,8 @@
+---
+agent: Code_Reviewer
+name: "Deep-Dive_API-Security"
+description: "Use this prompt when initial scans identify API security vulnerabilities requiring detailed investigation."
+---
 # API Security Deep Dive
 
 Use this prompt when initial scans identify API security vulnerabilities requiring detailed investigation.

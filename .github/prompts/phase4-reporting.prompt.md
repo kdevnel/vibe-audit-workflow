@@ -1,3 +1,8 @@
+---
+agent: Report_Generator
+name: "Phase4-Report_Generation"
+description: "Generate a comprehensive security audit report from all findings."
+---
 # Phase 4: Report Generation
 
 Copy and paste this prompt into Copilot Chat to generate a comprehensive audit report from all findings.
