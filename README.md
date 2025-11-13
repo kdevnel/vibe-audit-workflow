@@ -23,9 +23,9 @@ This framework transforms code auditing from a manual, ad-hoc process into a gui
 1. **Copy framework files to your target project:**
 
    ```bash
-   cp -r .github/ /path/to/target-project/
-   cp -r prompts/ /path/to/target-project/
-   cp -r templates/ /path/to/target-project/
+   cp -r .github /path/to/target-project/
+   cp -r prompts /path/to/target-project/
+   cp -r templates /path/to/target-project/
    ```
 
 2. **Open the target project in VS Code**
